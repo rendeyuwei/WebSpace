@@ -21,6 +21,7 @@
                     link
                     color="pink"
                     height="270px"
+                    @click="handleClickSiderItem(item)"
                 >
                     <v-list-item-icon>
                         <v-icon>{{ item.icon }}</v-icon>
@@ -41,13 +42,17 @@ export default {
     data() {
         return {
             items: [
-                { title: "电影", icon: "mdi-view-dashboard" },
-                { title: "电视剧", icon: "mdi-image" },
-                { title: "关于", icon: "mdi-help-box" },
+                { key: "movies", title: "电影", icon: "mdi-view-dashboard" },
+                { key: "tvs", title: "电视剧", icon: "mdi-image" },
+                { key: "about", title: "关于", icon: "mdi-help-box" },
             ],
-            right: null,
         };
     },
+    methods: {
+        handleClickSiderItem(item) {
+            this.$router.push('/' + item.key)
+        }
+    }
 };
 </script>
 

@@ -3,8 +3,6 @@
         <web-sider></web-sider>
 
         <v-main>
-            <router-link to="/">Home</router-link>
-            <router-link to="/about">About</router-link>
             <router-view />
         </v-main>
         
