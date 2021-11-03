@@ -14,7 +14,7 @@
         <v-divider></v-divider>
 
         <v-list shaped nav>
-            <v-list-item-group>
+            <v-list-item-group v-model="defaultSelect">
                 <v-list-item
                     v-for="item in items"
                     :key="item.title"
@@ -41,6 +41,7 @@ export default {
     name: "web-sider",
     data() {
         return {
+            defaultSelect: 0,
             items: [
                 { key: "movies", title: "电影", icon: "mdi-view-dashboard" },
                 { key: "tvs", title: "电视剧", icon: "mdi-image" },
